@@ -43,6 +43,14 @@ class TestsCalculator(unittest.TestCase):
         result = self.calculator.eval("4 + 6")
         self.assertEqual(result, 10)
 
+    def test_eval_add_6_6(self):
+        result = self.calculator.eval("6 + 6")
+        self.assertEqual(result, 12)
+
+    def test_eval_multiple_operations(self):
+        result = self.calculator.eval("6 + 5 - 3 - 10 + 20")
+        self.assertEqual(result, 18)
+
     def test_parse_add_4_6(self):
         result = self.calculator.parse("4 + 6")
         self.assertEqual(result, [4, "+", 6])
