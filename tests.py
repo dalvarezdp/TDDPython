@@ -34,6 +34,11 @@ class TestsCalculator(unittest.TestCase):
         result = self.calculator.subtract(1, 6)  # 1 - 6 = -5
         self.assertEqual(result, -5)
 
+    def test_subtract_no_commutative_property(self):
+        result_a = self.calculator.subtract(1, 6)
+        result_b = self.calculator.subtract(6, 1)
+        self.assertNotEqual(result_a, result_b)
+
 
 # comprueba si se está ejecutando directamente este archivo con el comando: python tests.py y de ser así, arranca los test
 if __name__ == "__main__":
